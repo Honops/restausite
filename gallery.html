@@ -1,61 +1,58 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Galerie</title>
-
-<link rel="stylesheet" href="css/gallery.css">
 <link rel="stylesheet" href="css/style.css">
-
+<link rel="stylesheet" href="css/galerie.css">
 </head>
-
 
 <body>
 
 <header>
+  <nav class="nav-header">
+    <!-- Logo provisoire -->
+    <div class="logo">
+      <img src="assets/images/placeholder/logo.png" alt="Logo Restaurant">
+    </div>
 
-<nav>
-
-<h1>Restaurant</h1>
-
-<ul>
-<li><a href="index.html">Accueil</a></li>
-<li><a href="menu.html">Menu</a></li>
-<li><a href="galerie.html">Galerie</a></li>
-<li><a href="reservation.html">Réserver</a></li>
-</ul>
-
-</nav>
-
+    <ul class="nav-menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="galerie.html" class="active">Galerie</a></li>
+      <li><a href="reservation.html">Réserver</a></li>
+    </ul>
+  </nav>
 </header>
 
-
-
 <main>
+  <h2>Galerie</h2>
 
-<h2>Galerie</h2>
-
-<div class="galerie">
-
-<img src="assets/images/interieur/interieur1.jpg">
-<img src="assets/images/interieur/interieur2.jpg">
-<img src="assets/images/exterieur/exterieur1.jpg">
-<img src="assets/images/exterieur/exterieur2.jpg">
-
-</div>
-
+  <div class="galerie-grid">
+    <img src="assets/images/interieur/interieur1.jpg" alt="Intérieur 1" class="galerie-item">
+    <img src="assets/images/interieur/interieur2.jpg" alt="Intérieur 2" class="galerie-item">
+    <img src="assets/images/exterieur/exterieur1.jpg" alt="Extérieur 1" class="galerie-item">
+    <img src="assets/images/exterieur/exterieur2.jpg" alt="Extérieur 2" class="galerie-item">
+  </div>
 </main>
+
+<footer>
+  <div class="footer-contact">
+    <p>Téléphone : <a href="tel:+33123456789">01 23 45 67 89</a></p>
+    <p>Email : <a href="mailto:contact@restaurant.com">contact@restaurant.com</a></p>
+    <div class="footer-social">
+      <a href="https://facebook.com/restaurant" target="_blank">Facebook</a> |
+      <a href="https://instagram.com/restaurant" target="_blank">Instagram</a>
+    </div>
+  </div>
+  <p>© Restaurant</p>
+</footer>
 
 <!-- Scripts -->
 <script src="js/firebase-config.js"></script>
-<script src="js/gallery.js" defer></script>
+<script src="js/galerie.js" defer></script>
 <script src="js/main.js" defer></script>
 
 </body>
-
 </html>
