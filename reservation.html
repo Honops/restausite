@@ -1,1 +1,42 @@
-3jj
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réservation – Restaurant Premium</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">🍽️ Restaurant Premium</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="reservation.html">Réservation</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="reservation-form">
+  <h2>Réservez votre table</h2>
+
+  <form id="reservation">
+    <input type="text" id="name" placeholder="Nom complet" required>
+    <input type="tel" id="phone" placeholder="Téléphone" required>
+    <input type="date" id="date" required>
+    <input type="time" id="time" required>
+    <button type="submit" class="btn-primary">Réserver</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Restaurant Premium</p>
+</footer>
+
+<script src="js/firebase-config.js"></script>
+<script src="js/reservation.js"></script>
+</body>
+</html>
