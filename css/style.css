@@ -422,6 +422,7 @@ height:35px;
 
 }
 .center-title {
-  text-align: center;
-  margin-bottom: 20px;
+  display: block;       /* s’assure que le h2 prend toute la largeur */
+  margin: 0 auto 20px;  /* centre horizontalement et espace en bas */
+  text-align: center;   /* centre le texte à l’intérieur */
 }
