@@ -5,16 +5,37 @@
   box-sizing: border-box;
 }
 
+/* Fond par défaut neutre */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #f8f8f8;
+  font-family:'Poppins',sans-serif;
+  background-color: #f0f2f5;
   color: #222;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding-top: 80px; /* espace pour header fixe */
+  line-height:1.6;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  transition: background 0.5s, color 0.5s;
 }
+
+/* Mode jour */
+body.day-mode {
+  background: linear-gradient(120deg, #f4f4f4, #e8ebf0);
+  color: #222;
+}
+
+/* Mode nuit */
+body.night-mode {
+  background: linear-gradient(120deg, #1c1c1c, #2b2b2b);
+  color: #f1f1f1;
+}
+
+/* Si tu veux adapter header, sections et footer */
+body.night-mode header,
+body.night-mode section,
+body.night-mode footer {
+  filter: brightness(0.8);
+}
+
 
 /* ===== HEADER ===== */
 .nav-header {
