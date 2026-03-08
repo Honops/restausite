@@ -429,3 +429,39 @@ footer a:hover {
     width: 100%;
   }
 }
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  margin-left: 20px; /* espace entre menu/logo et toggle */
+}
+
+.toggle-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  height: 24px;
+  background: #ccc;
+  border-radius: 12px;
+  transition: background 0.3s;
+}
+
+.toggle-label .sun,
+.toggle-label .moon {
+  position: absolute;
+  width: 50%;
+  text-align: center;
+  top: 0;
+  line-height: 24px;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+#toggleTheme {
+  display: none;
+}
+
+#toggleTheme:checked + .toggle-label {
+  background: #444;
+}
