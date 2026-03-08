@@ -1,0 +1,70 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8f8f8;
+  margin: 0; padding: 0;
+}
+
+header {
+  background: #222;
+  color: #ff69b4;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  color: #222;
+  margin-bottom: 15px;
+}
+
+form#serviceForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+form input, form select, form button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+form button {
+  background: #ff69b4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #ff85c1;
+}
+
+#menuDashboard {
+  margin-top: 20px;
+}
+
+.menu-item {
+  display: inline-block;
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.menu-item img,
+.menu-item video {
+  width: 100%;
+  border-radius: 8px;
+}
