@@ -421,8 +421,17 @@ height:35px;
 }
 
 }
+/* CENTRAGE DES TITRES PRINCIPAUX */
 .center-title {
-  display: block;       /* s’assure que le h2 prend toute la largeur */
-  margin: 0 auto 20px;  /* centre horizontalement et espace en bas */
-  text-align: center;   /* centre le texte à l’intérieur */
+  display: block;           /* s’assure que le h2 prend toute la largeur possible */
+  width: 100%;              /* force le h2 à occuper toute la largeur du parent */
+  text-align: center;       /* centre le texte à l’intérieur */
+  margin: 0 0 20px 0;       /* espace en bas */
+}
+
+/* S’assurer que le parent main ou section centre ses enfants */
+main, section {
+  display: flex;
+  flex-direction: column;   /* empile verticalement les enfants */
+  align-items: center;      /* centre horizontalement tous les enfants */
 }
