@@ -419,3 +419,13 @@ height:35px;
 }
 
 }
+/* ===== RÉSERVATION ===== */
+#reservationForm,
+main h2 {
+  text-align: center;
+}
+
+#reservationForm {
+  margin: 0 auto; /* centre le formulaire */
+  max-width: 500px; /* limite la largeur pour ne pas étirer */
+}
