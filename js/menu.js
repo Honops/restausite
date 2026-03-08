@@ -1,34 +1,28 @@
+// ===== menu.js =====
 const menuContainer = document.getElementById('menuContainer');
+
 if(menuContainer){
 
   async function loadMenu(){
     menuContainer.innerHTML = '<p>Chargement du menu...</p>';
 
     try{
-      const snapshot = await db.collection('services').orderBy('createdAt','desc').get();
-      if(snapshot.empty){
-        menuContainer.innerHTML = '<p>Le menu sera bientôt disponible.</p>';
-        return;
-      }
+      // Lecture du menu depuis JSON local (ou tu pourras remplacer par Firebase plus tard)
+      const response = await fetch('data/menu.json');
+      const menuData = await response.json();
 
-      // Regrouper par catégorie
-      const categories = { entree: [], plat: [], dessert: [], promo: [] };
-      snapshot.forEach(doc=>{
-        const data = doc.data();
-        if(categories[data.category]){
-          categories[data.category].push(data);
-        }
-      });
+      menuContainer.innerHTML = ''; // vider le container avant affichage
 
-      menuContainer.innerHTML = '';
+      // Parcours catégories
+      for(const category of ['entree','plat','dessert','promo']){
+        const items = menuData[category];
+        if(!items || items.length === 0) continue;
 
-      // Créer sections
-      for(const cat in categories){
         const catDiv = document.createElement('div');
         catDiv.classList.add('menu-category');
-        catDiv.innerHTML = `<h3>${cat.toUpperCase()}</h3>`;
-        
-        categories[cat].forEach(item=>{
+        catDiv.innerHTML = `<h3>${category.toUpperCase()}</h3>`;
+
+        items.forEach(item=>{
           const itemDiv = document.createElement('div');
           itemDiv.classList.add('menu-item');
 
@@ -50,7 +44,7 @@ if(menuContainer){
         menuContainer.appendChild(catDiv);
       }
 
-      // Zoom au clic
+      // ===== AGRANDIR LES MÉDIAS AU CLIC =====
       document.querySelectorAll('.menu-media').forEach(media=>{
         media.addEventListener('click', ()=>{
           const overlay = document.createElement('div');
