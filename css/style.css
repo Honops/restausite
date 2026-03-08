@@ -419,12 +419,6 @@ height:35px;
 }
 
 }
-/* ===== RÉSERVATION ===== */
-#reservationPage main {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centre horizontalement tous les enfants */
-}
 
 }
 .center-title {
