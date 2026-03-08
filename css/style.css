@@ -138,34 +138,28 @@ border-radius:6px;
 background:#ff85c1;
 }
 
-/* ===== HERO INTRO ===== */
-
 .hero-intro{
 text-align:center;
 padding:40px 20px;
+
+/* image de fond */
+background-image: url("../assets/images/hero/main.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+color: white; /* pour le texte lisible */
+position: relative;
 }
 
-.hero-intro h2{
-font-size:2rem;
-margin-bottom:10px;
-}
-
-.hero-intro p{
-font-size:1.2rem;
-margin-bottom:20px;
-}
-
-.hero-intro .btn{
-padding:10px 20px;
-background:#ff69b4;
-color:white;
-text-decoration:none;
-border-radius:6px;
-font-weight:bold;
-}
-
-.hero-intro .btn:hover{
-background:#ff85c1;
+.hero-intro::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4); /* filtre sombre */
+z-index:-1;
 }
 
 
