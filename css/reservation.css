@@ -1,74 +1,39 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+main {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-body{
-background:#fafafa;
+main h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
 }
 
-/* NAV */
-
-header{
-background:#111;
-color:white;
-padding:20px;
+form#reservationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
 }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-max-width:1200px;
-margin:auto;
+form input, form button {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
 }
 
-nav ul{
-display:flex;
-gap:20px;
-list-style:none;
+form button {
+  background: #ff69b4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
-
-/* FORM */
-
-main{
-max-width:500px;
-margin:80px auto;
-text-align:center;
-}
-
-form{
-display:flex;
-flex-direction:column;
-gap:15px;
-margin-top:30px;
-}
-
-input{
-padding:12px;
-border:1px solid #ccc;
-border-radius:5px;
-font-size:16px;
-}
-
-button{
-padding:12px;
-background:#f4a261;
-border:none;
-color:white;
-font-size:16px;
-border-radius:5px;
-cursor:pointer;
-}
-
-button:hover{
-background:#e76f51;
+form button:hover {
+  background: #ff85c1;
 }
