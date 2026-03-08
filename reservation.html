@@ -1,67 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Réservation</title>
-
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/reservation.css">
-
 </head>
-
 
 <body>
 
 <header>
+  <nav class="nav-header">
+    <!-- Logo provisoire -->
+    <div class="logo">
+      <img src="assets/images/placeholder/logo.png" alt="Logo Restaurant">
+    </div>
 
-<nav>
-
-<h1>Restaurant</h1>
-
-<ul>
-<li><a href="index.html">Accueil</a></li>
-<li><a href="menu.html">Menu</a></li>
-<li><a href="galerie.html">Galerie</a></li>
-<li><a href="reservation.html">Réserver</a></li>
-</ul>
-
-</nav>
-
+    <ul class="nav-menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="reservation.html" class="active">Réserver</a></li>
+    </ul>
+  </nav>
 </header>
 
-
 <main>
+  <h2>Réserver une table</h2>
 
-<h2>Réserver une table</h2>
-
-
-<form>
-
-<input type="text" placeholder="Nom" required>
-
-<input type="email" placeholder="Email" required>
-
-<input type="date" required>
-
-<input type="time" required>
-
-<input type="number" placeholder="Personnes" required>
-
-<button type="submit">Réserver</button>
-
-</form>
-
+  <form id="reservationForm">
+    <input type="text" id="resName" placeholder="Nom" required>
+    <input type="email" id="resEmail" placeholder="Email" required>
+    <input type="date" id="resDate" required>
+    <input type="time" id="resTime" required>
+    <input type="number" id="resPeople" placeholder="Nombre de personnes" required>
+    <button type="submit">Réserver</button>
+  </form>
 </main>
+
+<footer>
+  <div class="footer-contact">
+    <p>Téléphone : <a href="tel:+33123456789">01 23 45 67 89</a></p>
+    <p>Email : <a href="mailto:contact@restaurant.com">contact@restaurant.com</a></p>
+    <div class="footer-social">
+      <a href="https://facebook.com/restaurant" target="_blank">Facebook</a> |
+      <a href="https://instagram.com/restaurant" target="_blank">Instagram</a>
+    </div>
+  </div>
+  <p>© Restaurant</p>
+</footer>
+
 <!-- Scripts -->
 <script src="js/firebase-config.js"></script>
 <script src="js/reservation.js" defer></script>
 <script src="js/main.js" defer></script>
 
 </body>
-
 </html>
