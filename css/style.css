@@ -1,6 +1,4 @@
-/* ===========================
-   RESET & BASE
-=========================== */
+/* ===== GLOBAL ===== */
 * {
   margin: 0;
   padding: 0;
@@ -9,117 +7,104 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  line-height: 1.5;
   background: #f8f8f8;
+  line-height: 1.5;
   color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img, video {
-  max-width: 100%;
-  display: block;
-}
-
-/* ===========================
-   HEADER
-=========================== */
+/* ===== HEADER ===== */
 .nav-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
   background: #222;
-  color: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 10px 20px;
 }
 
 .nav-header .logo img {
   height: 50px;
 }
 
-.nav-menu {
-  display: flex;
+.nav-header .nav-menu {
   list-style: none;
+  display: flex;
   gap: 20px;
 }
 
-.nav-menu li a {
+.nav-header .nav-menu li a {
   color: #fff;
-  font-weight: 500;
-  padding: 5px 10px;
-  transition: background 0.3s, color 0.3s;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.nav-menu li a:hover,
-.nav-menu li a.active {
-  background: #ff69b4;
-  border-radius: 5px;
+.nav-header .nav-menu li a.active {
+  color: #ff69b4;
 }
 
-/* ===========================
-   HERO
-=========================== */
+@media (max-width: 768px) {
+  .nav-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-header .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+}
+
+/* ===== HERO ===== */
 .hero {
-  position: relative;
   text-align: center;
-  overflow: hidden;
+  margin: 20px 0;
 }
 
-.hero-text {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-  z-index: 10;
-  width: 90%;
-  max-width: 700px;
-}
-
-.hero-text h2 {
-  font-size: 2.5rem;
+/* Texte d'accueil */
+.hero-intro h2 {
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
-.hero-text p {
+.hero-intro p {
   font-size: 1.2rem;
   margin-bottom: 15px;
 }
 
-.hero-text .btn {
-  display: inline-block;
-  padding: 10px 25px;
-  background: #ff69b4;
+.hero-intro .btn {
+  padding: 10px 20px;
+  background-color: #ff69b4;
   color: #fff;
-  border-radius: 5px;
-  font-weight: 600;
-  transition: background 0.3s;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
-.hero-text .btn:hover {
-  background: #ff85c1;
+/* Image bienvenue */
+.hero-welcome-image img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  margin-bottom: 20px;
 }
 
-/* Grande image principale */
+/* Grande image + petites images */
+.hero-gallery {
+  margin-bottom: 20px;
+}
+
 .hero-main-image img {
   width: 100%;
-  height: auto;
-  display: block;
+  border-radius: 12px;
+  margin-bottom: 15px;
 }
 
-/* 4 petites images */
 .hero-small-images {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin: 15px 0;
   flex-wrap: wrap;
 }
 
@@ -128,7 +113,7 @@ img, video {
   border-radius: 10px;
 }
 
-/* Vidéo 10s */
+/* Vidéo */
 .hero-video {
   margin: 20px auto;
   max-width: 600px;
@@ -137,15 +122,12 @@ img, video {
 .hero-video video {
   width: 100%;
   border-radius: 10px;
-  display: block;
 }
 
-/* ===========================
-   SECTIONS
-=========================== */
+/* ===== SECTIONS ===== */
 section {
-  padding: 40px 20px;
-  max-width: 1100px;
+  padding: 20px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -154,159 +136,105 @@ section h2, section h3 {
   color: #222;
 }
 
-/* Menu */
+section p {
+  margin-bottom: 15px;
+}
+
+/* ===== MENU ===== */
+.menu-section {
+  margin-bottom: 30px;
+}
+
 .menu-section .images {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .menu-section .images img {
-  width: calc(33.33% - 6.66px);
-  border-radius: 8px;
+  width: calc(25% - 7.5px);
+  border-radius: 10px;
 }
 
 .menu-section .video-container {
-  margin-bottom: 15px;
+  max-width: 500px;
+  margin: 10px auto;
 }
 
 .menu-section .video-container video {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-.menu-section .plats {
-  list-style: none;
-}
-
-.menu-section .plats li {
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-}
-
-/* Galerie */
+/* ===== GALERIE ===== */
 .galerie-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
 }
 
 .galerie-item {
-  border-radius: 8px;
+  width: calc(50% - 5px);
+  border-radius: 10px;
 }
 
-/* Formulaire réservation */
+@media (max-width: 768px) {
+  .hero-small-images img {
+    width: calc(50% - 5px);
+  }
+  .menu-section .images img {
+    width: calc(50% - 5px);
+  }
+  .galerie-item {
+    width: 100%;
+  }
+}
+
+/* ===== RESERVATION FORM ===== */
 form#reservationForm {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 400px;
-  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-form#reservationForm input,
-form#reservationForm button {
+form input, form button {
   padding: 10px;
-  font-size: 1rem;
   border-radius: 6px;
   border: 1px solid #ccc;
+  font-size: 1rem;
 }
 
-form#reservationForm button {
+form button {
   background: #ff69b4;
   color: #fff;
-  font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
-form#reservationForm button:hover {
+form button:hover {
   background: #ff85c1;
 }
 
-/* Présentation restaurant */
-.presentation p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* ===========================
-   FOOTER
-=========================== */
+/* ===== FOOTER ===== */
 footer {
   background: #222;
   color: #fff;
-  padding: 20px;
   text-align: center;
-  margin-top: 40px;
-}
-
-.footer-contact a {
-  color: #ff69b4;
-}
-
-.footer-social a {
-  margin: 0 5px;
-  color: #ff69b4;
-}
-
-.footer-contact p, .footer-social {
-  margin-bottom: 5px;
-}
-
-footer p.footer-copyright {
+  margin-top: auto;
+  padding: 15px 20px;
   font-size: 0.9rem;
-  margin-top: 10px;
 }
 
-/* ===========================
-   RESPONSIVE
-=========================== */
-@media (max-width: 1024px) {
-  .hero-small-images img {
-    width: calc(50% - 5px);
-  }
+footer a {
+  color: #ff69b4;
+  text-decoration: none;
 }
 
-@media (max-width: 768px) {
-  .nav-header {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .hero-text h2 {
-    font-size: 2rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-  }
-
-  .hero-small-images img {
-    width: calc(50% - 5px);
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-text h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero-text p {
-    font-size: 0.9rem;
-  }
-
-  .hero-small-images img {
-    width: 100%;
-  }
+footer a:hover {
+  text-decoration: underline;
 }
