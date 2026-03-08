@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard – Restaurant Premium</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<header>
+  <div class="logo">🍽️ Dashboard Restaurant</div>
+</header>
+
+<section id="dashboard">
+  <h2>Gestion du menu et des réservations</h2>
+
+  <!-- Upload médias plats -->
+  <div class="upload-media">
+    <h3>Ajouter un plat</h3>
+    <form id="serviceForm">
+      <input type="text" id="serviceName" placeholder="Nom du plat" required>
+      <input type="number" id="servicePrice" placeholder="Prix (€)" required>
+      <select id="serviceCategory" required>
+        <option value="entree">Entrée</option>
+        <option value="plat">Plat</option>
+        <option value="dessert">Dessert</option>
+        <option value="promo">Promo</option>
+      </select>
+      <input type="file" id="serviceMedia" accept="image/*,video/*" required>
+      <select id="serviceType">
+        <option value="image">Image</option>
+        <option value="video">Vidéo</option>
+      </select>
+      <button type="submit" class="btn-primary">Ajouter</button>
+    </form>
+  </div>
+
+  <!-- Tableau réservations -->
+  <div class="reservation-dashboard">
+    <h3>Réservations</h3>
+    <table id="reservationsTable">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Téléphone</th>
+          <th>Date</th>
+          <th>Heure</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Restaurant Premium</p>
+</footer>
+
+<script src="js/firebase-config.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
