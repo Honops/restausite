@@ -1,0 +1,88 @@
+{
+  "entree": [
+    {
+      "name": "Salade César",
+      "price": 7.50,
+      "type": "image",
+      "mediaUrl": "assets/images/menu/entree/salade_cesar.jpg"
+    },
+    {
+      "name": "Soupe du jour",
+      "price": 6.00,
+      "type": "image",
+      "mediaUrl": "assets/images/menu/entree/soupe_du_jour.jpg"
+    },
+    {
+      "name": "Bruschetta",
+      "price": 6.50,
+      "type": "video",
+      "mediaUrl": "assets/videos/menu/entree/bruschetta.mp4"
+    }
+  ],
+  "plat": [
+    {
+      "name": "Steak Frites",
+      "price": 15.00,
+      "type": "image",
+      "mediaUrl": "assets/images/menu/plat/steak_frites.jpg"
+    },
+    {
+      "name": "Poulet Rôti",
+      "price": 14.00,
+      "type": "image",
+      "mediaUrl": "assets/images/menu/plat/poulet_roti.jpg"
+    },
+    {
+      "name": "Lasagnes Maison",
+      "price": 13.50,
+      "type": "video",
+      "mediaUrl": "assets/videos/menu/plat/lasagnes.mp4"
+    }
+  ],
+  "dessert": [
+    {
+      "name": "Tiramisu",
+      "price": 6.50,
+      "type": "image",
+      "mediaUrl": "assets/images/menu/dessert/tiramisu.jpg"
+    },
+    {
+      "name": "Crème Brûlée",
+      "price": 6.00,
+      "type": "image",
+      "mediaUrl": "assets/images/menu/dessert/creme_brulee.jpg"
+    },
+    {
+      "name": "Fondant au Chocolat",
+      "price": 7.00,
+      "type": "video",
+      "mediaUrl": "assets/videos/menu/dessert/fondant.mp4"
+    }
+  ],
+  "promo": [
+    {
+      "name": "Burger du Moment",
+      "price": 8.50,
+      "type": "image",
+      "mediaUrl": "assets/images/menu/promo/burger.jpg"
+    },
+    {
+      "name": "Cocktail Maison",
+      "price": 5.50,
+      "type": "image",
+      "mediaUrl": "assets/images/menu/promo/cocktail.jpg"
+    },
+    {
+      "name": "Pizza du Chef",
+      "price": 9.00,
+      "type": "video",
+      "mediaUrl": "assets/videos/menu/promo/pizza.mp4"
+    },
+    {
+      "name": "Tarte du Moment",
+      "price": 6.50,
+      "type": "image",
+      "mediaUrl": "assets/images/menu/promo/tarte.jpg"
+    }
+  ]
+}
