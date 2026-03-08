@@ -5,15 +5,15 @@
   box-sizing: border-box;
 }
 
-/* Fond par défaut neutre */
+/* ===== BODY ===== */
 body {
-  font-family:'Poppins',sans-serif;
-  background-color: #f0f2f5;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f2f5; /* fond par défaut neutre */
   color: #222;
-  line-height:1.6;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   transition: background 0.5s, color 0.5s;
 }
 
@@ -29,13 +29,12 @@ body.night-mode {
   color: #f1f1f1;
 }
 
-/* Si tu veux adapter header, sections et footer */
+/* Ajustement header, sections et footer en nuit */
 body.night-mode header,
 body.night-mode section,
 body.night-mode footer {
-  filter: brightness(0.8);
+  filter: brightness(0.85);
 }
-
 
 /* ===== HEADER ===== */
 .nav-header {
@@ -65,12 +64,12 @@ body.night-mode footer {
   z-index: -1;
 }
 
-/* logo */
+/* Logo */
 .logo img {
   height: 40px;
 }
 
-/* menu */
+/* Menu */
 .nav-menu {
   list-style: none;
   display: flex;
@@ -95,7 +94,7 @@ body.night-mode footer {
   border-bottom: 3px solid #ff69b4;
 }
 
-/* bouton reserver */
+/* Bouton réserver */
 .reserve-btn {
   font-size: 18px;
   font-weight: bold;
@@ -106,6 +105,44 @@ body.night-mode footer {
 
 .reserve-btn:hover {
   background: #ff85c1;
+}
+
+/* ===== BOUTON TOGGLE MODE JOUR/NUIT ===== */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.toggle-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 50px;
+  height: 24px;
+  background: #ccc;
+  border-radius: 12px;
+  transition: background 0.3s;
+}
+
+.toggle-label .sun,
+.toggle-label .moon {
+  position: absolute;
+  width: 50%;
+  text-align: center;
+  top: 0;
+  line-height: 24px;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+#toggleTheme {
+  display: none;
+}
+
+#toggleTheme:checked + .toggle-label {
+  background: #444;
 }
 
 /* ===== HERO INTRO ===== */
@@ -124,10 +161,10 @@ body.night-mode footer {
 .hero-intro::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   background: rgba(0,0,0,0.4);
   z-index: -1;
 }
@@ -163,14 +200,12 @@ body.night-mode footer {
   text-align: center;
 }
 
-/* grande image */
 .hero-main-image img {
   width: 100%;
   border-radius: 12px;
   margin-bottom: 15px;
 }
 
-/* plats populaires */
 .popular-dishes {
   display: flex;
   gap: 10px;
@@ -194,7 +229,6 @@ body.night-mode footer {
   font-weight: bold;
 }
 
-/* vidéo */
 .hero-video {
   margin: 20px auto;
   max-width: 600px;
@@ -212,14 +246,14 @@ section {
   margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: center; /* centre le contenu */
+  align-items: center;
 }
 
 section h2 {
   margin-bottom: 15px;
 }
 
-/* ===== TITRES CENTRÉS PRINCIPAUX ===== */
+/* ===== TITRES CENTRÉS ===== */
 .center-title {
   display: block;
   width: 100%;
@@ -265,8 +299,7 @@ section h2 {
   border-bottom: 1px solid #ddd;
 }
 
-/* ===== GALERIE ===== */
-./* Galerie scrollable */
+/* ===== GALERIE SCROLLABLE + LIGHTBOX ===== */
 .galerie-container {
   overflow-x: auto;
   display: flex;
@@ -302,10 +335,10 @@ section h2 {
   display: none;
   position: fixed;
   z-index: 2000;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   background: rgba(0,0,0,0.9);
   justify-content: center;
   align-items: center;
@@ -328,28 +361,9 @@ section h2 {
   user-select: none;
 }
 
-.lightbox .close {
-  top: 20px;
-  right: 30px;
-}
-
-.lightbox .prev {
-  top: 50%;
-  left: 30px;
-  transform: translateY(-50%);
-}
-
-.lightbox .next {
-  top: 50%;
-  right: 30px;
-  transform: translateY(-50%);
-}
-
-/* Responsive */
-@media(max-width:768px){
-  .galerie-item { width: 150px; }
-  .lightbox .close, .lightbox .prev, .lightbox .next { font-size: 30px; }
-}
+.lightbox .close { top: 20px; right: 30px; }
+.lightbox .prev { top:50%; left:30px; transform: translateY(-50%); }
+.lightbox .next { top:50%; right:30px; transform: translateY(-50%); }
 
 /* ===== FORMULAIRE ===== */
 form {
@@ -404,7 +418,7 @@ footer a:hover {
 }
 
 /* ===== RESPONSIVE ===== */
-@media(max-width:768px){
+@media(max-width:768px) {
   .nav-header {
     flex-direction: row;
   }
@@ -416,7 +430,6 @@ footer a:hover {
     height: 35px;
   }
 
-  /* petits médias */
   .popular-dishes .dish {
     width: calc(50% - 5px);
   }
@@ -428,40 +441,4 @@ footer a:hover {
   .galerie-item {
     width: 100%;
   }
-}
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  margin-left: 20px; /* espace entre menu/logo et toggle */
-}
-
-.toggle-label {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 50px;
-  height: 24px;
-  background: #ccc;
-  border-radius: 12px;
-  transition: background 0.3s;
-}
-
-.toggle-label .sun,
-.toggle-label .moon {
-  position: absolute;
-  width: 50%;
-  text-align: center;
-  top: 0;
-  line-height: 24px;
-  font-size: 14px;
-  pointer-events: none;
-}
-
-#toggleTheme {
-  display: none;
-}
-
-#toggleTheme:checked + .toggle-label {
-  background: #444;
 }
