@@ -1,4 +1,6 @@
-/* ===== RESET ===== */
+/* ==========================
+   RESET & BASE
+========================== */
 * {
   margin: 0;
   padding: 0;
@@ -7,80 +9,98 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #f8f8f8;
+  line-height: 1.6;
+  background-color: #f8f8f8;
   color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ===== HEADER ===== */
-header {
-  background: #222;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-nav {
-  max-width: 1200px;
-  margin: auto;
+/* ==========================
+   HEADER / NAV
+========================== */
+.nav-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 15px 20px;
+  background: #222;
 }
 
-nav .logo img {
+.nav-header .logo img {
   width: 50px;
+  height: auto;
 }
 
-nav ul {
+.nav-menu {
+  list-style: none;
   display: flex;
   gap: 20px;
 }
 
-nav ul li a {
+.nav-menu li a {
   color: #fff;
+  text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
-nav ul li a:hover {
+.nav-menu li a:hover,
+.nav-menu li a.active {
   color: #ff69b4;
 }
 
-/* ===== HERO ===== */
+/* ==========================
+   HERO
+========================== */
 .hero {
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .hero-main-image img {
   width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
   display: block;
-  border-radius: 0;
 }
 
 .hero-small-images {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin: 10px 0;
+  margin-top: 10px;
   flex-wrap: wrap;
 }
 
 .hero-small-images img {
-  width: calc(25% - 10px);
-  height: auto;
+  width: calc(25% - 7.5px);
+  max-width: 150px;
   border-radius: 8px;
 }
 
+.hero-video video {
+  margin-top: 20px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+}
+
+/* Texte superposé sur la hero */
 .hero-text {
   position: absolute;
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
   color: #fff;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
 .hero-text h2 {
@@ -94,68 +114,177 @@ nav ul li a:hover {
 }
 
 .hero-text .btn {
+  display: inline-block;
   padding: 10px 20px;
   background: #ff69b4;
   color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.hero-text .btn:hover {
+  background: #ff85c1;
+}
+
+/* ==========================
+   SECTIONS
+========================== */
+section {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+h2, h3 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+/* ==========================
+   MENU
+========================== */
+.menu-section {
+  margin-bottom: 30px;
+}
+
+.menu-section .images,
+.menu-section .video-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.menu-section .images img,
+.menu-section .video-container video {
+  width: 220px;
+  max-width: 100%;
   border-radius: 8px;
-  font-weight: 600;
 }
 
-.hero-video {
-  margin: 15px auto;
-  max-width: 800px;
+.menu-section ul.plats {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.hero-video video {
-  width: 100%;
+.menu-section ul.plats li {
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  flex: 1 1 200px;
+}
+
+/* ==========================
+   GALERIE
+========================== */
+.galerie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.galerie-grid img.galerie-item {
+  width: calc(50% - 10px);
+  max-width: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* ==========================
+   RÉSERVATION
+========================== */
+form#reservationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
+  padding: 20px;
   border-radius: 10px;
 }
 
-/* ===== PRESENTATION ===== */
-.presentation {
-  text-align: center;
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
+form#reservationForm input,
+form#reservationForm button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
 }
 
-/* ===== FOOTER ===== */
+form#reservationForm button {
+  background: #ff69b4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form#reservationForm button:hover {
+  background: #ff85c1;
+}
+
+/* ==========================
+   PRESENTATION
+========================== */
+.presentation {
+  text-align: center;
+}
+
+/* ==========================
+   FOOTER
+========================== */
 footer {
   background: #222;
   color: #fff;
-  font-size: 0.9rem;
+  padding: 15px 20px;
+  margin-top: auto;
   text-align: center;
-  padding: 15px 10px;
+  font-size: 0.9rem;
 }
 
 footer a {
   color: #ff69b4;
+  text-decoration: none;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 992px) {
-  .hero-small-images img {
-    width: calc(50% - 10px);
-  }
+footer a:hover {
+  text-decoration: underline;
 }
 
-@media (max-width: 600px) {
-  nav {
+.footer-contact {
+  margin-bottom: 10px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+  .nav-menu {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 10px;
   }
 
-  nav ul {
-    flex-direction: column;
-    gap: 5px;
+  .hero-small-images {
+    justify-content: center;
+  }
+
+  .menu-section .images img,
+  .menu-section .video-container video {
+    width: 100%;
+  }
+
+  .galerie-grid img.galerie-item {
     width: 100%;
   }
 
   .hero-text h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
-  .hero-small-images img {
-    width: 100%;
+  .hero-text p {
+    font-size: 1rem;
   }
 }
