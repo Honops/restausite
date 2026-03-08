@@ -138,24 +138,24 @@ border-radius:6px;
 background:#ff85c1;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO INTRO ===== */
 
-.hero{
+.hero-intro{
 text-align:center;
-margin:20px 0;
+padding:40px 20px;
 }
 
-.hero-text h2{
+.hero-intro h2{
 font-size:2rem;
 margin-bottom:10px;
 }
 
-.hero-text p{
+.hero-intro p{
 font-size:1.2rem;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
-.hero-text .btn{
+.hero-intro .btn{
 padding:10px 20px;
 background:#ff69b4;
 color:white;
@@ -164,8 +164,63 @@ border-radius:6px;
 font-weight:bold;
 }
 
-.hero-text .btn:hover{
+.hero-intro .btn:hover{
 background:#ff85c1;
+}
+
+
+/* ===== HERO MEDIA ===== */
+
+.hero-media{
+max-width:1000px;
+margin:auto;
+padding:20px;
+text-align:center;
+}
+
+/* grande image */
+
+.hero-main-image img{
+width:100%;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+/* plats populaires */
+
+.popular-dishes{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+justify-content:center;
+margin-bottom:20px;
+}
+
+.dish{
+width:calc(25% - 10px);
+}
+
+.dish img{
+width:100%;
+border-radius:10px;
+margin-bottom:5px;
+}
+
+.dish p{
+font-size:14px;
+font-weight:bold;
+}
+
+/* vidéo */
+
+.hero-video{
+max-width:600px;
+margin:auto;
+}
+
+.hero-video video{
+width:100%;
+border-radius:10px;
 }
 
 /* grande image */
