@@ -1,6 +1,4 @@
-/* ======================================
-   RESET & BASE
-====================================== */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -9,39 +7,29 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  line-height: 1.5;
-  color: #222;
   background: #f8f8f8;
+  color: #222;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ======================================
-   HEADER & NAV
-====================================== */
+/* ===== HEADER ===== */
 header {
   background: #222;
-  color: #fff;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 
 nav {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: auto;
   padding: 10px 20px;
 }
 
 nav .logo img {
   width: 50px;
-  height: auto;
 }
 
 nav ul {
@@ -52,36 +40,30 @@ nav ul {
 nav ul li a {
   color: #fff;
   font-weight: 500;
-  padding: 5px 10px;
-  transition: background 0.3s, color 0.3s;
+  transition: 0.3s;
 }
 
 nav ul li a:hover {
-  background: #ff69b4;
-  color: #fff;
-  border-radius: 5px;
+  color: #ff69b4;
 }
 
-/* ======================================
-   HERO
-====================================== */
+/* ===== HERO ===== */
 .hero {
   position: relative;
-  text-align: center;
-  overflow: hidden;
+  width: 100%;
 }
 
 .hero-main-image img {
   width: 100%;
-  height: auto;
   display: block;
+  border-radius: 0;
 }
 
 .hero-small-images {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin: 15px 0;
+  margin: 10px 0;
   flex-wrap: wrap;
 }
 
@@ -93,9 +75,10 @@ nav ul li a:hover {
 
 .hero-text {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
+  text-align: center;
   color: #fff;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
@@ -111,180 +94,47 @@ nav ul li a:hover {
 }
 
 .hero-text .btn {
+  padding: 10px 20px;
   background: #ff69b4;
   color: #fff;
-  padding: 10px 20px;
   border-radius: 8px;
   font-weight: 600;
 }
 
 .hero-video {
-  margin-top: 15px;
+  margin: 15px auto;
+  max-width: 800px;
 }
 
 .hero-video video {
   width: 100%;
-  max-height: 400px;
   border-radius: 10px;
 }
 
-/* ======================================
-   SECTIONS
-====================================== */
-section {
-  max-width: 1200px;
+/* ===== PRESENTATION ===== */
+.presentation {
+  text-align: center;
+  max-width: 1000px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-section p {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-}
-
-/* ======================================
-   MENU
-====================================== */
-.menu-category {
-  margin-bottom: 40px;
-}
-
-.menu-item {
-  display: inline-block;
-  width: 220px;
-  margin: 10px;
-  text-align: center;
-  background: #fff;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.menu-item img,
-.menu-item video {
-  width: 100%;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* Zoom overlay */
-.overlay {
-  position: fixed;
-  top:0; left:0;
-  width: 100%; height:100%;
-  background: rgba(0,0,0,0.8);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:2000;
-}
-
-.overlay-content img,
-.overlay-content video {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-}
-
-/* ======================================
-   GALERIE
-====================================== */
-.galerie {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.galerie img {
-  width: calc(25% - 10px);
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-/* ======================================
-   FORMULAIRES RESERVATION
-====================================== */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 500px;
-  margin: auto;
-}
-
-form input, form select, form button {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-form button {
-  background: #ff69b4;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-form button:hover {
-  background: #ff85c1;
-}
-
-/* ======================================
-   FOOTER
-====================================== */
+/* ===== FOOTER ===== */
 footer {
   background: #222;
   color: #fff;
-  padding: 15px 20px;
-  text-align: center;
   font-size: 0.9rem;
+  text-align: center;
+  padding: 15px 10px;
 }
 
 footer a {
   color: #ff69b4;
 }
 
-.footer-contact p {
-  margin-bottom: 5px;
-}
-
-.footer-social a {
-  margin: 0 5px;
-}
-
-/* ======================================
-   RESPONSIVE
-====================================== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
-  nav ul {
-    gap: 10px;
-  }
-
-  .hero-text h2 {
-    font-size: 2rem;
-  }
-
   .hero-small-images img {
-    width: calc(50% - 10px);
-  }
-
-  .menu-item {
-    width: 45%;
-  }
-
-  .galerie img {
     width: calc(50% - 10px);
   }
 }
@@ -298,21 +148,14 @@ footer a {
   nav ul {
     flex-direction: column;
     gap: 5px;
+    width: 100%;
   }
 
   .hero-text h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .hero-small-images img {
-    width: 100%;
-  }
-
-  .menu-item {
-    width: 100%;
-  }
-
-  .galerie img {
     width: 100%;
   }
 }
