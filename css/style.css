@@ -5,20 +5,19 @@
   box-sizing: border-box;
 }
 
-/* ===== BODY ===== */
+/* ===== BODY + MODES JOUR/NUIT ===== */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f0f2f5; /* fond neutre général */
+  background-color: #f0f2f5;
   color: #222;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: 80px; /* header fixe */
   transition: background 0.5s, color 0.5s;
-  padding-top: 80px; /* espace pour header fixe */
 }
 
-/* ===== MODES JOUR/NUIT ===== */
 body.day-mode {
   background: linear-gradient(120deg, #f4f4f4, #e8ebf0);
   color: #222;
@@ -94,7 +93,7 @@ body.night-mode footer {
   border-bottom: 3px solid #ff69b4;
 }
 
-/* bouton reserver */
+/* bouton réserver */
 .reserve-btn {
   font-size: 18px;
   font-weight: bold;
@@ -107,7 +106,7 @@ body.night-mode footer {
   background: #ff85c1;
 }
 
-/* ===== BOUTON TOGGLE JOUR/NUIT ===== */
+/* toggle mode jour/nuit */
 .theme-toggle {
   display: flex;
   align-items: center;
@@ -246,7 +245,7 @@ section {
   margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: center; /* centre le contenu */
+  align-items: center;
 }
 
 section h2 {
