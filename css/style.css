@@ -110,44 +110,6 @@ body.night-mode footer {
   background: #ff85c1;
 }
 
-/* ===== TOGGLE JOUR/NUIT ===== */
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-}
-
-.toggle-label {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 50px;
-  height: 24px;
-  background: #ccc;
-  border-radius: 12px;
-  transition: background 0.3s;
-}
-
-.toggle-label .sun,
-.toggle-label .moon {
-  position: absolute;
-  width: 50%;
-  text-align: center;
-  top: 0;
-  line-height: 24px;
-  font-size: 14px;
-  pointer-events: none;
-}
-
-#toggleTheme {
-  display: none;
-}
-
-#toggleTheme:checked + .toggle-label {
-  background: #444;
-}
-
 /* ===== HERO INTRO ===== */
 .hero-intro {
   text-align: center;
@@ -305,13 +267,12 @@ section p {
   padding: 6px 0;
   border-bottom: 1px solid #ddd;
 }
-
-/* ===== GALERIE SCROLL + LIGHTBOX ===== */
+/* ===== GALERIE SCROLLABLE ===== */
 .galerie-container {
-  overflow-x: auto;
   display: flex;
-  gap: 10px;
-  padding: 10px 0;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 15px;
   scroll-behavior: smooth;
 }
 
@@ -325,10 +286,11 @@ section p {
 }
 
 .galerie-item {
-  flex: 0 0 auto;
-  width: 250px;
+  flex: 0 0 auto;      /* empêche les images de se réduire */
+  width: 250px;         /* largeur fixe pour toutes */
+  height: 180px;        /* hauteur fixe */
   border-radius: 10px;
-  object-fit: cover;
+  object-fit: cover;    /* images bien ajustées */
   cursor: pointer;
   transition: transform 0.3s;
 }
@@ -372,6 +334,11 @@ section p {
 .lightbox .prev { top: 50%; left: 30px; transform: translateY(-50%); }
 .lightbox .next { top: 50%; right: 30px; transform: translateY(-50%); }
 
+/* Responsive */
+@media(max-width:768px){
+  .galerie-item { width: 180px; height: 130px; }
+  .lightbox .close, .lightbox .prev, .lightbox .next { font-size: 30px; }
+}
 /* ===== FORMULAIRE ===== */
 form {
   display: flex;
