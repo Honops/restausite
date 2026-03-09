@@ -8,28 +8,27 @@
 /* ===== BODY ===== */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f0f2f5; /* fond par défaut neutre */
+  background-color: #f0f2f5; /* fond neutre général */
   color: #222;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   transition: background 0.5s, color 0.5s;
+  padding-top: 80px; /* espace pour header fixe */
 }
 
-/* Mode jour */
+/* ===== MODES JOUR/NUIT ===== */
 body.day-mode {
   background: linear-gradient(120deg, #f4f4f4, #e8ebf0);
   color: #222;
 }
 
-/* Mode nuit */
 body.night-mode {
   background: linear-gradient(120deg, #1c1c1c, #2b2b2b);
   color: #f1f1f1;
 }
 
-/* Ajustement header, sections et footer en nuit */
 body.night-mode header,
 body.night-mode section,
 body.night-mode footer {
@@ -51,25 +50,26 @@ body.night-mode footer {
   left: 0;
   width: 100%;
   z-index: 1000;
+  position: relative;
 }
 
 .nav-header::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   background: rgba(0,0,0,0.65);
   z-index: -1;
 }
 
-/* Logo */
+/* logo */
 .logo img {
   height: 40px;
 }
 
-/* Menu */
+/* menu */
 .nav-menu {
   list-style: none;
   display: flex;
@@ -94,7 +94,7 @@ body.night-mode footer {
   border-bottom: 3px solid #ff69b4;
 }
 
-/* Bouton réserver */
+/* bouton reserver */
 .reserve-btn {
   font-size: 18px;
   font-weight: bold;
@@ -107,7 +107,7 @@ body.night-mode footer {
   background: #ff85c1;
 }
 
-/* ===== BOUTON TOGGLE MODE JOUR/NUIT ===== */
+/* ===== BOUTON TOGGLE JOUR/NUIT ===== */
 .theme-toggle {
   display: flex;
   align-items: center;
@@ -148,7 +148,7 @@ body.night-mode footer {
 /* ===== HERO INTRO ===== */
 .hero-intro {
   text-align: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
   background-image: url("https://raw.githubusercontent.com/Honops/imagesrestaurantsite/refs/heads/main/Firebase/manucure1.jpg");
   background-size: cover;
   background-position: center;
@@ -203,7 +203,7 @@ body.night-mode footer {
 .hero-main-image img {
   width: 100%;
   border-radius: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .popular-dishes {
@@ -230,8 +230,8 @@ body.night-mode footer {
 }
 
 .hero-video {
-  margin: 20px auto;
   max-width: 600px;
+  margin: 20px auto;
 }
 
 .hero-video video {
@@ -246,7 +246,7 @@ section {
   margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* centre le contenu */
 }
 
 section h2 {
@@ -255,7 +255,6 @@ section h2 {
 
 /* ===== TITRES CENTRÉS ===== */
 .center-title {
-  display: block;
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
@@ -299,7 +298,7 @@ section h2 {
   border-bottom: 1px solid #ddd;
 }
 
-/* ===== GALERIE SCROLLABLE + LIGHTBOX ===== */
+/* ===== GALERIE ===== */
 .galerie-container {
   overflow-x: auto;
   display: flex;
@@ -419,26 +418,10 @@ footer a:hover {
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px) {
-  .nav-header {
-    flex-direction: row;
-  }
-  .nav-menu {
-    gap: 15px;
-    font-size: 14px;
-  }
-  .logo img {
-    height: 35px;
-  }
-
-  .popular-dishes .dish {
-    width: calc(50% - 5px);
-  }
-
-  .menu-section .images img {
-    width: calc(50% - 5px);
-  }
-
-  .galerie-item {
-    width: 100%;
-  }
+  .nav-header { flex-direction: row; }
+  .nav-menu { gap: 15px; font-size: 14px; }
+  .logo img { height: 35px; }
+  .popular-dishes .dish { width: calc(50% - 5px); }
+  .menu-section .images img { width: calc(50% - 5px); }
+  .galerie-item { width: 100%; }
 }
