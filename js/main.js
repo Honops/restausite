@@ -1,5 +1,27 @@
-// ==================== LANGUE DU VISITEUR ====================
-const userLang = navigator.language || navigator.userLanguage; // ex: "fr-FR"
+// ===== main.js =====
+
+// === HEADER SCROLL (apparence seulement) ===
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.nav-header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled'); // tu peux changer couleur, ombre, etc. en CSS
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+// === MENU BURGER (OPTIONNEL) ===
+const burger = document.querySelector('.burger-menu');
+const navMenu = document.querySelector('.nav-menu');
+
+if (burger && navMenu) {
+  burger.addEventListener('click', () => {
+    navMenu.classList.toggle('active'); // juste visible ou caché en mobile
+  });
+}
+
+// === LANGUE DU VISITEUR ===
+const userLang = navigator.language || navigator.userLanguage; // "fr-FR" ou "en-US"
 const lang = userLang.split('-')[0]; // "fr" ou "en"
 
 const translations = {
@@ -32,12 +54,12 @@ function applyLanguage(lang) {
 
 applyLanguage(lang);
 
-// ==================== MODE NUIT AUTOMATIQUE ====================
+// === MODE NUIT AUTOMATIQUE ===
 const body = document.body;
 const hour = new Date().getHours();
 
 if (hour >= 19 || hour < 7) {
-  body.classList.add('night-mode');
+  body.classList.add('night-mode'); // CSS gère le fond et couleurs
 } else {
-  body.classList.add('day-mode');
+  body.classList.add('day-mode'); // CSS gère le fond et couleurs
 }
