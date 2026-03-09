@@ -1,29 +1,9 @@
-// ===== main.js =====
 
-// === HEADER SCROLL (apparence seulement) ===
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('.nav-header');
-  if (window.scrollY > 50) {
-    header.classList.add('scrolled'); // tu peux changer couleur, ombre, etc. en CSS
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
-
-// === MENU BURGER (OPTIONNEL) ===
-const burger = document.querySelector('.burger-menu');
-const navMenu = document.querySelector('.nav-menu');
-
-if (burger && navMenu) {
-  burger.addEventListener('click', () => {
-    navMenu.classList.toggle('active'); // juste visible ou caché en mobile
-  });
-}
-
-// === LANGUE DU VISITEUR ===
-const userLang = navigator.language || navigator.userLanguage; // "fr-FR" ou "en-US"
+// 2️⃣ Traductions automatiques selon la langue du visiteur
+const userLang = navigator.language || navigator.userLanguage; // ex: "fr-FR" ou "en-US"
 const lang = userLang.split('-')[0]; // "fr" ou "en"
 
+// Texte traduit
 const translations = {
   fr: {
     welcome: "Bienvenue au Restaurant",
@@ -39,27 +19,19 @@ const translations = {
   }
 };
 
+// Appliquer les traductions
 function applyLanguage(lang) {
-  const t = translations[lang] || translations['en'];
+  const t = translations[lang] || translations['en']; // fallback en anglais
   const heroTitle = document.querySelector('.hero-intro h2');
   const heroDesc = document.querySelector('.hero-intro p');
   const heroBtn = document.querySelector('.hero-intro .btn');
   const reserveH2 = document.querySelector('#reservationPage h2');
 
-  if (heroTitle) heroTitle.textContent = t.welcome;
-  if (heroDesc) heroDesc.textContent = t.description;
-  if (heroBtn) heroBtn.textContent = t.menuBtn;
-  if (reserveH2) reserveH2.textContent = t.reserveTitle;
+  if(heroTitle) heroTitle.textContent = t.welcome;
+  if(heroDesc) heroDesc.textContent = t.description;
+  if(heroBtn) heroBtn.textContent = t.menuBtn;
+  if(reserveH2) reserveH2.textContent = t.reserveTitle;
 }
 
+// Appliquer dès le chargement
 applyLanguage(lang);
-
-// === MODE NUIT AUTOMATIQUE ===
-const body = document.body;
-const hour = new Date().getHours();
-
-if (hour >= 19 || hour < 7) {
-  body.classList.add('night-mode'); // CSS gère le fond et couleurs
-} else {
-  body.classList.add('day-mode'); // CSS gère le fond et couleurs
-}
