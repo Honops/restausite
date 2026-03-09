@@ -1,184 +1,185 @@
 /* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* ===== BODY + MODES JOUR/NUIT ===== */
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f0f2f5;
-  color: #222;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding-top: 80px; /* header fixe */
-  transition: background 0.5s, color 0.5s;
-}
-
-body.day-mode {
-  background: linear-gradient(120deg, #f4f4f4, #e8ebf0);
-  color: #222;
-}
-
-body.night-mode {
-  background: linear-gradient(120deg, #1c1c1c, #2b2b2b);
-  color: #f1f1f1;
-}
-
-body.night-mode header,
-body.night-mode section,
-body.night-mode footer {
-  filter: brightness(0.85);
+body{
+font-family:'Poppins',sans-serif;
+background:#f8f8f8;
+color:#222;
+line-height:1.6;
+min-height:100vh;
+display:flex;
+flex-direction:column;
 }
 
 /* ===== HEADER ===== */
-.nav-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 20px;
-  background-image: url("https://raw.githubusercontent.com/Honops/imagesrestaurantsite/refs/heads/main/Firebase/manucure1.jpg");
-  background-size: cover;
-  background-position: center;
-  border-bottom: 3px solid rgba(0,0,0,0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  position: relative;
+
+.nav-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 20px;
+
+/* image de fond restaurant */
+background-image:url("https://raw.githubusercontent.com/Honops/imagesrestaurantsite/refs/heads/main/Firebase/manucure1.jpg");
+background-size:cover;
+background-position:center;
+
+border-bottom:3px solid rgba(0,0,0,0.5);
+
+/* header fixe */
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
 }
 
-.nav-header::before {
-  content: "";
-  position: absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.65);
-  z-index: -1;
+/* overlay sombre pour lisibilité */
+
+.nav-header::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+z-index:-1;
 }
 
 /* logo */
-.logo img {
-  height: 40px;
+
+.logo img{
+height:40px;
 }
 
 /* menu */
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  align-items: center;
+
+.nav-menu{
+list-style:none;
+display:flex;
+gap:20px;
+align-items:center;
 }
 
-.nav-menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  padding-bottom: 5px;
-  transition: 0.3s;
+.nav-menu a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+padding-bottom:4px;
 }
 
-.nav-menu a:hover {
-  color: #ff69b4;
+/* page active */
+
+.nav-menu a.active{
+border-bottom:3px solid #ff69b4;
 }
 
-.nav-menu a.active {
-  border-bottom: 3px solid #ff69b4;
+/* bouton reserver */
+
+.reserve-btn{
+background:#ff69b4;
+padding:7px 15px;
+border-radius:6px;
 }
 
-/* bouton réserver */
-.reserve-btn {
-  font-size: 18px;
-  font-weight: bold;
-  background: #ff69b4;
-  padding: 8px 16px;
-  border-radius: 6px;
+.reserve-btn:hover{
+background:#ff85c1;
+}
+body{
+padding-top:80px;
 }
 
-.reserve-btn:hover {
-  background: #ff85c1;
+/* menu */
+
+.nav-menu{
+list-style:none;
+display:flex;
+gap:25px;
+align-items:center;
 }
 
-/* toggle mode jour/nuit */
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
+.nav-menu a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+padding-bottom:5px;
+transition:0.3s;
 }
 
-.toggle-label {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 50px;
-  height: 24px;
-  background: #ccc;
-  border-radius: 12px;
-  transition: background 0.3s;
+.nav-menu a:hover{
+color:#ff69b4;
 }
 
-.toggle-label .sun,
-.toggle-label .moon {
-  position: absolute;
-  width: 50%;
-  text-align: center;
-  top: 0;
-  line-height: 24px;
-  font-size: 14px;
-  pointer-events: none;
+/* page active */
+
+.nav-menu a.active{
+border-bottom:3px solid #ff69b4;
 }
 
-#toggleTheme {
-  display: none;
+/* bouton reserver */
+
+.reserve-btn{
+font-size:18px;
+font-weight:bold;
+background:#ff69b4;
+padding:8px 16px;
+border-radius:6px;
 }
 
-#toggleTheme:checked + .toggle-label {
-  background: #444;
+.reserve-btn:hover{
+background:#ff85c1;
 }
 
 /* ===== HERO INTRO ===== */
-.hero-intro {
+
+.hero-intro{
   text-align: center;
   padding: 40px 20px;
+
+  /* image de fond */
   background-image: url("https://raw.githubusercontent.com/Honops/imagesrestaurantsite/refs/heads/main/Firebase/manucure1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  /* texte au-dessus de l'overlay */
   color: white;
-  position: relative;
+  position: relative;  /* nécessaire pour l'overlay */
   z-index: 1;
 }
 
-.hero-intro::before {
-  content: "";
-  position: absolute;
+/* overlay sombre pour améliorer la lisibilité */
+.hero-intro::before{
+  content:"";
+  position:absolute;
   top:0;
   left:0;
   width:100%;
   height:100%;
-  background: rgba(0,0,0,0.4);
-  z-index: -1;
+  background: rgba(0,0,0,0.4); /* tu peux mettre 0.5 ou 0.6 si besoin */
+  z-index: -1; /* derrière le texte */
 }
 
-.hero-intro h2 {
+/* texte et bouton */
+.hero-intro h2{
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
-.hero-intro p {
+.hero-intro p{
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
-.hero-intro .btn {
+.hero-intro .btn{
   padding: 10px 20px;
   background: #ff69b4;
   color: white;
@@ -187,240 +188,250 @@ body.night-mode footer {
   font-weight: bold;
 }
 
-.hero-intro .btn:hover {
+.hero-intro .btn:hover{
   background: #ff85c1;
 }
 
 /* ===== HERO MEDIA ===== */
-.hero-media {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
-  text-align: center;
+
+.hero-media{
+max-width:1000px;
+margin:auto;
+padding:20px;
+text-align:center;
 }
 
-.hero-main-image img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 20px;
+/* grande image */
+
+.hero-main-image img{
+width:100%;
+border-radius:12px;
+margin-bottom:20px;
 }
 
-.popular-dishes {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 20px;
+/* plats populaires */
+
+.popular-dishes{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+justify-content:center;
+margin-bottom:20px;
 }
 
-.dish {
-  width: calc(25% - 10px);
+.dish{
+width:calc(25% - 10px);
 }
 
-.dish img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 5px;
+.dish img{
+width:100%;
+border-radius:10px;
+margin-bottom:5px;
 }
 
-.dish p {
-  font-size: 14px;
-  font-weight: bold;
+.dish p{
+font-size:14px;
+font-weight:bold;
 }
 
-.hero-video {
-  max-width: 600px;
-  margin: 20px auto;
+/* vidéo */
+
+.hero-video{
+max-width:600px;
+margin:auto;
 }
 
-.hero-video video {
-  width: 100%;
-  border-radius: 10px;
+.hero-video video{
+width:100%;
+border-radius:10px;
+}
+
+/* grande image */
+
+.hero-main-image img{
+width:100%;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+/* petites images */
+
+.hero-small-images{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.hero-small-images img{
+width:calc(25% - 7.5px);
+border-radius:10px;
+}
+
+/* vidéo */
+
+.hero-video{
+margin:20px auto;
+max-width:600px;
+}
+
+.hero-video video{
+width:100%;
+border-radius:10px;
 }
 
 /* ===== SECTIONS ===== */
-section {
-  padding: 20px;
-  max-width: 1000px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+section{
+padding:20px;
+max-width:1000px;
+margin:auto;
 }
 
-section h2 {
-  margin-bottom: 15px;
+section h2{
+margin-bottom:15px;
 }
 
-/* ===== TITRES CENTRÉS ===== */
-.center-title {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
+section p{
+margin-bottom:15px;
 }
 
 /* ===== MENU ===== */
-.menu-section {
-  margin-bottom: 30px;
-  width: 100%;
+
+.menu-section{
+margin-bottom:30px;
 }
 
-.menu-section .images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 10px;
+.menu-section .images{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:10px;
 }
 
-.menu-section .images img {
-  width: calc(25% - 7.5px);
-  border-radius: 10px;
+.menu-section .images img{
+width:calc(25% - 7.5px);
+border-radius:10px;
 }
 
-.video-container {
-  max-width: 500px;
-  margin: 10px auto;
+.video-container{
+max-width:500px;
+margin:10px auto;
 }
 
-.video-container video {
-  width: 100%;
-  border-radius: 10px;
+.video-container video{
+width:100%;
+border-radius:10px;
 }
 
-.plats {
-  list-style: none;
-  margin-top: 10px;
+.plats{
+list-style:none;
+margin-top:10px;
 }
 
-.plats li {
-  padding: 6px 0;
-  border-bottom: 1px solid #ddd;
+.plats li{
+padding:6px 0;
+border-bottom:1px solid #ddd;
 }
 
 /* ===== GALERIE ===== */
-.galerie-container {
-  overflow-x: auto;
-  display: flex;
-  gap: 10px;
-  padding: 10px 0;
-  scroll-behavior: smooth;
+
+.galerie-grid{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+justify-content:center;
 }
 
-.galerie-container::-webkit-scrollbar {
-  height: 8px;
+.galerie-item{
+width:calc(50% - 5px);
+border-radius:10px;
 }
-
-.galerie-container::-webkit-scrollbar-thumb {
-  background: #ff69b4;
-  border-radius: 4px;
-}
-
-.galerie-item {
-  flex: 0 0 auto;
-  width: 250px;
-  border-radius: 10px;
-  object-fit: cover;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.galerie-item:hover {
-  transform: scale(1.05);
-}
-
-/* Lightbox overlay */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.9);
-  justify-content: center;
-  align-items: center;
-}
-
-.lightbox-img {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 10px;
-}
-
-.lightbox .close,
-.lightbox .prev,
-.lightbox .next {
-  position: absolute;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-}
-
-.lightbox .close { top: 20px; right: 30px; }
-.lightbox .prev { top:50%; left:30px; transform: translateY(-50%); }
-.lightbox .next { top:50%; right:30px; transform: translateY(-50%); }
 
 /* ===== FORMULAIRE ===== */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 400px;
-  margin: auto;
+
+form{
+display:flex;
+flex-direction:column;
+gap:10px;
+background:white;
+padding:20px;
+border-radius:10px;
+max-width:400px;
+margin:auto;
 }
 
-form input {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
+form input{
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:1rem;
 }
 
-form button {
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  background: #ff69b4;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
+form button{
+padding:10px;
+border:none;
+border-radius:6px;
+background:#ff69b4;
+color:white;
+font-weight:bold;
+cursor:pointer;
 }
 
-form button:hover {
-  background: #ff85c1;
+form button:hover{
+background:#ff85c1;
 }
 
 /* ===== FOOTER ===== */
-footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  margin-top: auto;
-  padding: 15px 20px;
-  font-size: 0.9rem;
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+margin-top:auto;
+padding:15px 20px;
+font-size:0.9rem;
 }
 
-footer a {
-  color: #ff69b4;
-  text-decoration: none;
+footer a{
+color:#ff69b4;
+text-decoration:none;
 }
 
-footer a:hover {
-  text-decoration: underline;
+footer a:hover{
+text-decoration:underline;
 }
 
 /* ===== RESPONSIVE ===== */
-@media(max-width:768px) {
-  .nav-header { flex-direction: row; }
-  .nav-menu { gap: 15px; font-size: 14px; }
-  .logo img { height: 35px; }
-  .popular-dishes .dish { width: calc(50% - 5px); }
-  .menu-section .images img { width: calc(50% - 5px); }
-  .galerie-item { width: 100%; }
+@media(max-width:768px){
+
+.nav-header{
+flex-direction:row;
+}
+
+.nav-menu{
+gap:15px;
+font-size:14px;
+}
+
+.logo img{
+height:35px;
+}
+
+}
+
+}
+/* CENTRAGE DES TITRES PRINCIPAUX */
+.center-title {
+  display: block;           /* s’assure que le h2 prend toute la largeur possible */
+  width: 100%;              /* force le h2 à occuper toute la largeur du parent */
+  text-align: center;       /* centre le texte à l’intérieur */
+  margin: 0 0 20px 0;       /* espace en bas */
+}
+
+/* S’assurer que le parent main ou section centre ses enfants */
+main, section {
+  display: flex;
+  flex-direction: column;   /* empile verticalement les enfants */
+  align-items: center;      /* centre horizontalement tous les enfants */
 }
