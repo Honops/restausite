@@ -1,25 +1,3 @@
-// ===== main.js =====
-
-// ==================== HEADER SCROLL ====================
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('.nav-header');
-  if (window.scrollY > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
-
-// ==================== MENU BURGER (OPTIONNEL) ====================
-const burger = document.querySelector('.burger-menu'); // créer un bouton si besoin
-const navMenu = document.querySelector('.nav-menu');
-
-if (burger && navMenu) {
-  burger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
-}
-
 // ==================== LANGUE DU VISITEUR ====================
 const userLang = navigator.language || navigator.userLanguage; // ex: "fr-FR"
 const lang = userLang.split('-')[0]; // "fr" ou "en"
